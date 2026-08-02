@@ -15,7 +15,7 @@
 
 ## ✨ 核心特色 / Key Features
 
-- 📖 **Notebook-first / 单文件自包含**  
+- 📖 **单文件自包含 / Notebook-first**  
   每个核心机制均独立封装在一个可直接运行的 `.ipynb` 中，无需跨文件跳转。  
   Each core mechanism is independently encapsulated in a runnable `.ipynb` file, eliminating the overhead of navigating across files.
 
