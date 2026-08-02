@@ -50,3 +50,124 @@ notebooks/
 ├── 00_core_nanoToyEnv_minimal.ipynb            # [Core] Isolated & Resettable Toy Execution Environment
 └── 00_core_nanoAgentLoop_minimal.ipynb         # [Core] Minimal Agent Core Execution Loop
 ```
+---
+
+## 🚀 快速开始 / Quick Start
+
+### 1. 环境准备 / Environment Setup
+**[CN]** 克隆仓库并创建 Conda 环境：  
+**[EN]** Clone the repository and set up a Conda environment:
+```bash
+git clone https://github.com/your-username/nano-Harness.git
+cd nano-Harness
+conda create -n nano-harness python=3.11 -y
+conda activate nano-harness
+pip install -r requirements.txt
+```
+
+### 2. 配置密钥 / Configure API Key
+**[CN]** 在 `.env` 填入真实的 API 密钥  
+**[EN]** Fill in your real API backend credentials in `.env` file
+
+### 3. 打开并运行 / Launch & Run
+**[CN]** 在 IDE (如 VS Code / Cursor / PyCharm) 或 Jupyter Lab 中打开 `notebooks/` 目录下的目标 `.ipynb` 文件，选择配置好的 Python 内核即可按顺序运行代码单元格。  
+**[EN]** Open any `.ipynb` file in the `notebooks/` directory using your IDE (e.g., VS Code, Cursor, PyCharm) or Jupyter Lab, select the configured Python kernel, and execute the cells step-by-step.
+
+---
+
+## TODO
+
+> **[CN]** 注：带 `opt` 标识的为可选与进阶模块，不带 `opt` 的为基础必修模块。  
+> **[EN]** Note: Notebooks with the `opt` prefix are optional & advanced modules, while those without `opt` are core foundation modules.
+
+### 00_core
+- [x] `00_core_nanoProviderAdapter_minimal.ipynb`
+- [x] `00_core_nanoMessageProtocol_minimal.ipynb`
+- [x] `00_core_nanoToyEnv_minimal.ipynb`
+- [x] `00_core_nanoAgentLoop_minimal.ipynb`
+
+### 01_E
+- [ ] `01_E_nanoSandbox_minimal.ipynb`
+- [ ] `01_E_nanoResetReplay_minimal.ipynb`
+- [ ] `01_E_nanoSandboxAbstraction_minimal.ipynb`
+- [ ] `01_E_opt_nanoBrowserEnv_minimal.ipynb`
+- [ ] `01_E_opt_nanoPermissionSandbox_minimal.ipynb`
+- [ ] `01_E_opt_nanoSandboxEscapeBench_minimal.ipynb`
+- [ ] `01_E_opt_nanoWasmSandbox_minimal.ipynb`
+
+### 02_T
+- [ ] `02_T_nanoToolCalling_minimal.ipynb`
+- [ ] `02_T_nanoToolRegistry_minimal.ipynb`
+- [ ] `02_T_nanoMCPMiniProtocol_minimal.ipynb`
+- [ ] `02_T_opt_nanoOpenAPIAdapter_minimal.ipynb`
+- [ ] `02_T_opt_nanoSkillLibrary_minimal.ipynb`
+- [ ] `02_T_opt_nanoTokenEfficientTools_minimal.ipynb`
+- [ ] `02_T_opt_nanoToolLearningToy_minimal.ipynb`
+- [ ] `02_T_opt_nanoToolSessionScaling_minimal.ipynb`
+
+### 03_C
+- [ ] `03_C_nanoContextWindow_minimal.ipynb`
+- [ ] `03_C_nanoMemory_minimal.ipynb`
+- [ ] `03_C_nanoLongHorizonCompaction_minimal.ipynb`
+- [ ] `03_C_opt_nanoContextDriftBenchmark_minimal.ipynb`
+- [ ] `03_C_opt_nanoGraphMemory_minimal.ipynb`
+- [ ] `03_C_opt_nanoKVCacheAwareContext_minimal.ipynb`
+- [ ] `03_C_opt_nanoProgressiveDisclosure_minimal.ipynb`
+- [ ] `03_C_opt_nanoSubAgentContextIsolation_minimal.ipynb`
+
+### 04_L
+- [ ] `04_L_nanoReActLoop_minimal.ipynb`
+- [ ] `04_L_nanoMultiAgent_minimal.ipynb`
+- [ ] `04_L_nanoTaskRunnerLifecycle_minimal.ipynb`
+- [ ] `04_L_opt_nanoCheckpointResume_minimal.ipynb`
+- [ ] `04_L_opt_nanoGraphWorkflow_minimal.ipynb`
+- [ ] `04_L_opt_nanoHumanHandoff_minimal.ipynb`
+- [ ] `04_L_opt_nanoPlannerGeneratorEvaluator_minimal.ipynb`
+- [ ] `04_L_opt_nanoStateModels_minimal.ipynb`
+
+### 05_O
+- [ ] `05_O_nanoCostTelemetry_minimal.ipynb`
+- [ ] `05_O_nanoReliabilityOps_minimal.ipynb`
+- [ ] `05_O_nanoTraceOps_minimal.ipynb`
+- [ ] `05_O_opt_nanoCognitiveObservability_minimal.ipynb`
+- [ ] `05_O_opt_nanoOpenTelemetryMini_minimal.ipynb`
+- [ ] `05_O_opt_nanoOpsDashboard_minimal.ipynb`
+
+### 06_V
+- [ ] `06_V_nanoEvalHarness_minimal.ipynb`
+- [ ] `06_V_nanoFailureAttribution_minimal.ipynb`
+- [ ] `06_V_nanoRegressionSuite_minimal.ipynb`
+- [ ] `06_V_opt_nanoHarnessAblationEval_minimal.ipynb`
+- [ ] `06_V_opt_nanoInfraNoise_minimal.ipynb`
+- [ ] `06_V_opt_nanoLLMJudgeCalibration_minimal.ipynb`
+- [ ] `06_V_opt_nanoReadinessValidation_minimal.ipynb`
+
+### 07_G
+- [ ] `07_G_nanoGovernance_minimal.ipynb`
+- [ ] `07_G_nanoPromptInjectionDefense_minimal.ipynb`
+- [ ] `07_G_nanoAuditConstitution_minimal.ipynb`
+- [ ] `07_G_opt_nanoComponentHardening_minimal.ipynb`
+- [ ] `07_G_opt_nanoCredentialVault_minimal.ipynb`
+- [ ] `07_G_opt_nanoFormalPolicyDSL_minimal.ipynb`
+- [ ] `07_G_opt_nanoIdentityDelegation_minimal.ipynb`
+- [ ] `07_G_opt_nanoInfoFlowControl_minimal.ipynb`
+
+### 08_X
+- [ ] `08_X_nanoFullHarness_minimal.ipynb`
+- [ ] `08_X_nanoCostQualitySpeed_minimal.ipynb`
+- [ ] `08_X_nanoHarnessCoupling_minimal.ipynb`
+- [ ] `08_X_opt_nanoCapabilityControl_minimal.ipynb`
+- [ ] `08_X_opt_nanoHarnessAsAssumption_minimal.ipynb`
+- [ ] `08_X_opt_nanoLongRunStability_minimal.ipynb`
+- [ ] `08_X_opt_nanoMetaHarnessSearch_minimal.ipynb`
+- [ ] `08_X_opt_nanoSelfEvolution_minimal.ipynb`
+
+### 09_capstone
+- [ ] `09_capstone_nanoAgentPlatform_minimal.ipynb`
+
+---
+
+## 📄 开源协议 / License
+
+**[CN]** 本项目采用 [MIT License](LICENSE) 开源协议。  
+**[EN]** This project is licensed under the [MIT License](LICENSE).
