@@ -22,6 +22,10 @@ Image source: [*Agent Harness Engineering: A Survey*](https://picrew.github.io/L
 - 📖 **单文件自包含 / Notebook-first**  
   每个核心机制均独立封装在一个可直接运行的 `.ipynb` 中，无需跨文件跳转。  
   Each core mechanism is independently encapsulated in a runnable `.ipynb` file, eliminating the overhead of navigating across files.
+  
+- 💻 **极简轻量 / CPU-Only & Lightweight**  
+  全代码仅涉及 Harness 执行逻辑与 API 交互，无需 GPU 显卡，普通本地电脑/笔记本即可秒级运行。  
+  Pure Python harness logic using remote APIs—NO GPU required; runs seamlessly on standard laptops.
 
 - 🔑 **真实 API 驱动 / Real API Driven**  
   拒绝静态 Mock 数据，所有运行与输出均由统一 `.env` 配置的真实 LLM Backend 产生。  
