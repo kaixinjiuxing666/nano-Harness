@@ -11,6 +11,9 @@
 
 **nano-Harness** is a minimal educational Python repository for building LLM Agent execution harnesses. Regarding current practice and production, "**Agent reliability is often governed by its execution harness rather than the model itself**". Built upon the **ETCLOVG 7-layer architecture** (Execution, Tool, Context, Lifecycle, Observability, Verification, Governance) proposed in [*Agent Harness Engineering: A Survey*](https://picrew.github.io/LLM-Harness/), it provides self-contained, real-API-driven, and highly observable code to unpack modern agent infrastructure step-by-step.
 
+<img width="1233" height="609" alt="taxonomy" src="https://github.com/user-attachments/assets/bc281bb0-3a08-4e73-93d3-e6b086f9bc53" />
+Image source: [*Agent Harness Engineering: A Survey*](https://picrew.github.io/LLM-Harness/) 
+
 ---
 
 ## ✨ 核心特色 / Key Features
