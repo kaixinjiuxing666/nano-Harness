@@ -1,0 +1,26 @@
+# Jupyter Notebook Environment
+jupyterlab==4.5.8
+ipykernel==7.3.0
+ipython==9.14.1
+
+# Core Model API & Environment (ETCLOVG Core)
+openai==2.45.0
+python-dotenv==1.2.2
+tiktoken==0.13.0
+
+# Data, Schema & Graph Utilities
+pandas==3.0.3
+numpy==2.4.6
+PyYAML==6.0.3
+jsonschema==4.26.0
+networkx==3.6.1
+rich==15.0.0
+
+# Testing & Evaluation
+pytest==9.1.1
+
+# Optional / Notebook Extension Dependencies
+# playwright
+# opentelemetry-api
+# RestrictedPython
+# scikit-learn

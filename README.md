@@ -39,22 +39,94 @@ Image source: [*Agent Harness Engineering: A Survey*](https://picrew.github.io/L
 
 ## 📁 项目结构 / Project Structure
 
-核心教学 Notebooks 存放在 [`notebooks/`](./notebooks) 目录下：  
-*Core educational notebooks are located in the [`notebooks/`](./notebooks) directory:*
+核心教学 Notebooks 按 ETCLOVG 七层架构模块化存放在仓库根目录的各子目录中：  
+*Core educational notebooks are organized into module-based subdirectories at the repository root, following the ETCLOVG 7-layer architecture:*
 
 ```text
-notebooks/
-├── 00_core_nanoProviderAdapter_minimal.ipynb   # [Core] 统一 LLM Provider 接口与配置校验
-├── 00_core_nanoMessageProtocol_minimal.ipynb   # [Core] 结构化消息协议与状态 Diff
-├── 00_core_nanoToyEnv_minimal.ipynb            # [Core] 可重置隔离的玩具执行环境
-└── 00_core_nanoAgentLoop_minimal.ipynb         # [Core] 极简 Agent 核心执行循环
+nano-Harness/
+├── 00_core/                                                # [Core] 核心基础模块
+│   ├── 00_core_nanoProviderAdapter.ipynb                   # [Core] 统一 LLM Provider 接口与配置校验
+│   ├── 00_core_nanoMessageProtocol.ipynb                   # [Core] 结构化消息协议与状态 Diff
+│   ├── 00_core_nanoToyEnv.ipynb                            # [Core] 可重置隔离的玩具执行环境
+│   └── 00_core_nanoAgentLoop.ipynb                         # [Core] 极简 Agent 核心执行循环
+├── 01_Execution Environment and Sandbox (E)/               # [E] 执行环境与沙箱层
+│   ├── 01_E_nanoSandbox.ipynb                              # [E] 沙箱化代码执行环境
+│   ├── 01_E_nanoResetReplay.ipynb                          # [E] 状态重置与执行回放
+│   └── 01_E_nanoSandboxAbstraction.ipynb                   # [E] 沙箱抽象层
+├── 02_Tool Interface and Protocol Layer (T)/               # [T] 工具接口与协议层
+│   ├── 02_T_nanoToolCalling.ipynb                          # [T] 工具调用机制
+│   ├── 02_T_nanoToolRegistry.ipynb                         # [T] 工具注册表
+│   └── 02_T_nanoMCPMiniProtocol.ipynb                      # [T] MCP 迷你协议
+├── 03_Context and Memory Management (C)/                   # [C] 上下文与记忆管理层
+│   ├── 03_C_nanoContextWindow.ipynb                        # [C] 上下文窗口管理
+│   ├── 03_C_nanoMemory.ipynb                               # [C] 记忆系统
+│   └── 03_C_nanoLongHorizonCompaction.ipynb                # [C] 长时程上下文压缩
+├── 04_Lifecycle and Orchestration (L)/                     # [L] 生命周期与编排层
+│   ├── 04_L_nanoReActLoop.ipynb                            # [L] ReAct 推理-执行循环
+│   ├── 04_L_nanoMultiAgent.ipynb                           # [L] 多 Agent 协作
+│   └── 04_L_nanoTaskRunnerLifecycle.ipynb                  # [L] 任务运行器生命周期
+├── 05_Observability and Operations (O)/                    # [O] 可观测性与运维层
+│   ├── 05_O_nanoCostTelemetry.ipynb                        # [O] 成本遥测
+│   ├── 05_O_nanoReliabilityOps.ipynb                       # [O] 可靠性运维
+│   └── 05_O_nanoTraceOps.ipynb                             # [O] Trace 运维
+├── 06_Verification and Evaluation (V)/                     # [V] 验证与评测层
+│   ├── 06_V_nanoEvalHarness.ipynb                          # [V] 评测基础设施
+│   ├── 06_V_nanoFailureAttribution.ipynb                   # [V] 失败归因
+│   └── 06_V_nanoRegressionSuite.ipynb                      # [V] 回归测试套件
+├── 07_Governance and Security (G)/                         # [G] 治理与安全层
+│   ├── 07_G_nanoGovernance.ipynb                           # [G] 治理框架
+│   ├── 07_G_nanoPromptInjectionDefense.ipynb               # [G] 提示注入防御
+│   └── 07_G_nanoAuditConstitution.ipynb                    # [G] 审计宪章
+├── 08_Cross-Layer Synthesis (X)/                           # [X] 跨层综合层
+│   ├── 08_X_nanoFullHarness.ipynb                          # [X] 完整 Harness 集成
+│   ├── 08_X_nanoCostQualitySpeed.ipynb                     # [X] 成本-质量-速度权衡
+│   └── 08_X_nanoHarnessCoupling.ipynb                      # [X] Harness 耦合分析
+├── .env                                                    # API 密钥配置
+├── LICENSE                                                 # MIT 开源协议
+└── README.md                                               # 项目说明文档
 ```
 ```text
-notebooks/
-├── 00_core_nanoProviderAdapter_minimal.ipynb   # [Core] Unified LLM Provider Interface & Config Validation
-├── 00_core_nanoMessageProtocol_minimal.ipynb   # [Core] Structured Message Protocol & State Diff
-├── 00_core_nanoToyEnv_minimal.ipynb            # [Core] Isolated & Resettable Toy Execution Environment
-└── 00_core_nanoAgentLoop_minimal.ipynb         # [Core] Minimal Agent Core Execution Loop
+nano-Harness/
+├── 00_core/                                                # [Core] Core Foundation Modules
+│   ├── 00_core_nanoProviderAdapter.ipynb                   # [Core] Unified LLM Provider Interface & Config Validation
+│   ├── 00_core_nanoMessageProtocol.ipynb                   # [Core] Structured Message Protocol & State Diff
+│   ├── 00_core_nanoToyEnv.ipynb                            # [Core] Isolated & Resettable Toy Execution Environment
+│   └── 00_core_nanoAgentLoop.ipynb                         # [Core] Minimal Agent Core Execution Loop
+├── 01_Execution Environment and Sandbox (E)/               # [E] Execution Environment & Sandbox Layer
+│   ├── 01_E_nanoSandbox.ipynb                              # [E] Sandboxed Code Execution Environment
+│   ├── 01_E_nanoResetReplay.ipynb                          # [E] State Reset & Execution Replay
+│   └── 01_E_nanoSandboxAbstraction.ipynb                   # [E] Sandbox Abstraction Layer
+├── 02_Tool Interface and Protocol Layer (T)/               # [T] Tool Interface & Protocol Layer
+│   ├── 02_T_nanoToolCalling.ipynb                          # [T] Tool Calling Mechanism
+│   ├── 02_T_nanoToolRegistry.ipynb                         # [T] Tool Registry
+│   └── 02_T_nanoMCPMiniProtocol.ipynb                      # [T] MCP Mini Protocol
+├── 03_Context and Memory Management (C)/                   # [C] Context & Memory Management Layer
+│   ├── 03_C_nanoContextWindow.ipynb                        # [C] Context Window Management
+│   ├── 03_C_nanoMemory.ipynb                               # [C] Memory System
+│   └── 03_C_nanoLongHorizonCompaction.ipynb                # [C] Long-Horizon Context Compaction
+├── 04_Lifecycle and Orchestration (L)/                     # [L] Lifecycle & Orchestration Layer
+│   ├── 04_L_nanoReActLoop.ipynb                            # [L] ReAct Reasoning-Action Loop
+│   ├── 04_L_nanoMultiAgent.ipynb                           # [L] Multi-Agent Collaboration
+│   └── 04_L_nanoTaskRunnerLifecycle.ipynb                  # [L] Task Runner Lifecycle
+├── 05_Observability and Operations (O)/                    # [O] Observability & Operations Layer
+│   ├── 05_O_nanoCostTelemetry.ipynb                        # [O] Cost Telemetry
+│   ├── 05_O_nanoReliabilityOps.ipynb                       # [O] Reliability Operations
+│   └── 05_O_nanoTraceOps.ipynb                             # [O] Trace Operations
+├── 06_Verification and Evaluation (V)/                     # [V] Verification & Evaluation Layer
+│   ├── 06_V_nanoEvalHarness.ipynb                          # [V] Evaluation Harness
+│   ├── 06_V_nanoFailureAttribution.ipynb                   # [V] Failure Attribution
+│   └── 06_V_nanoRegressionSuite.ipynb                      # [V] Regression Test Suite
+├── 07_Governance and Security (G)/                         # [G] Governance & Security Layer
+│   ├── 07_G_nanoGovernance.ipynb                           # [G] Governance Framework
+│   ├── 07_G_nanoPromptInjectionDefense.ipynb               # [G] Prompt Injection Defense
+│   └── 07_G_nanoAuditConstitution.ipynb                    # [G] Audit Constitution
+├── 08_Cross-Layer Synthesis (X)/                           # [X] Cross-Layer Synthesis Layer
+│   ├── 08_X_nanoFullHarness.ipynb                          # [X] Full Harness Integration
+│   ├── 08_X_nanoCostQualitySpeed.ipynb                     # [X] Cost-Quality-Speed Trade-off
+│   └── 08_X_nanoHarnessCoupling.ipynb                      # [X] Harness Coupling Analysis
+├── .env                                                    # API Key Configuration
+├── LICENSE                                                 # MIT License
+└── README.md                                               # Project Documentation
 ```
 ---
 
@@ -87,89 +159,89 @@ Open any `.ipynb` file in the `notebooks/` directory using your IDE (e.g., VS Co
 > Note: Notebooks with the `opt` prefix are optional & advanced modules, while those without `opt` are core foundation modules.
 
 ### 00_core
-- [x] ~~`00_core_nanoProviderAdapter_minimal.ipynb`~~
-- [x] ~~`00_core_nanoMessageProtocol_minimal.ipynb`~~
-- [x] ~~`00_core_nanoToyEnv_minimal.ipynb`~~
-- [x] ~~`00_core_nanoAgentLoop_minimal.ipynb`~~
+- [x] ~~`00_core_nanoProviderAdapter.ipynb`~~
+- [x] ~~`00_core_nanoMessageProtocol.ipynb`~~
+- [x] ~~`00_core_nanoToyEnv.ipynb`~~
+- [x] ~~`00_core_nanoAgentLoop.ipynb`~~
 
 ### 01_E
-- [ ] `01_E_nanoSandbox_minimal.ipynb`
-- [ ] `01_E_nanoResetReplay_minimal.ipynb`
-- [ ] `01_E_nanoSandboxAbstraction_minimal.ipynb`
-- [ ] `01_E_opt_nanoBrowserEnv_minimal.ipynb`
-- [ ] `01_E_opt_nanoPermissionSandbox_minimal.ipynb`
-- [ ] `01_E_opt_nanoSandboxEscapeBench_minimal.ipynb`
-- [ ] `01_E_opt_nanoWasmSandbox_minimal.ipynb`
+- [x] ~~`01_E_nanoSandbox.ipynb`~~
+- [x] ~~`01_E_nanoResetReplay.ipynb`~~
+- [x] ~~`01_E_nanoSandboxAbstraction.ipynb`~~
+- [ ] `01_E_opt_nanoBrowserEnv.ipynb`
+- [ ] `01_E_opt_nanoPermissionSandbox.ipynb`
+- [ ] `01_E_opt_nanoSandboxEscapeBench.ipynb`
+- [ ] `01_E_opt_nanoWasmSandbox.ipynb`
 
 ### 02_T
-- [ ] `02_T_nanoToolCalling_minimal.ipynb`
-- [ ] `02_T_nanoToolRegistry_minimal.ipynb`
-- [ ] `02_T_nanoMCPMiniProtocol_minimal.ipynb`
-- [ ] `02_T_opt_nanoOpenAPIAdapter_minimal.ipynb`
-- [ ] `02_T_opt_nanoSkillLibrary_minimal.ipynb`
-- [ ] `02_T_opt_nanoTokenEfficientTools_minimal.ipynb`
-- [ ] `02_T_opt_nanoToolLearningToy_minimal.ipynb`
-- [ ] `02_T_opt_nanoToolSessionScaling_minimal.ipynb`
+- [x] ~~`02_T_nanoToolCalling.ipynb`~~
+- [x] ~~`02_T_nanoToolRegistry.ipynb`~~
+- [x] ~~`02_T_nanoMCPMiniProtocol.ipynb`~~
+- [ ] `02_T_opt_nanoOpenAPIAdapter.ipynb`
+- [ ] `02_T_opt_nanoSkillLibrary.ipynb`
+- [ ] `02_T_opt_nanoTokenEfficientTools.ipynb`
+- [ ] `02_T_opt_nanoToolLearningToy.ipynb`
+- [ ] `02_T_opt_nanoToolSessionScaling.ipynb`
 
 ### 03_C
-- [ ] `03_C_nanoContextWindow_minimal.ipynb`
-- [ ] `03_C_nanoMemory_minimal.ipynb`
-- [ ] `03_C_nanoLongHorizonCompaction_minimal.ipynb`
-- [ ] `03_C_opt_nanoContextDriftBenchmark_minimal.ipynb`
-- [ ] `03_C_opt_nanoGraphMemory_minimal.ipynb`
-- [ ] `03_C_opt_nanoKVCacheAwareContext_minimal.ipynb`
-- [ ] `03_C_opt_nanoProgressiveDisclosure_minimal.ipynb`
-- [ ] `03_C_opt_nanoSubAgentContextIsolation_minimal.ipynb`
+- [x] ~~`03_C_nanoContextWindow.ipynb`~~
+- [x] ~~`03_C_nanoMemory.ipynb`~~
+- [x] ~~`03_C_nanoLongHorizonCompaction.ipynb`~~
+- [ ] `03_C_opt_nanoContextDriftBenchmark.ipynb`
+- [ ] `03_C_opt_nanoGraphMemory.ipynb`
+- [ ] `03_C_opt_nanoKVCacheAwareContext.ipynb`
+- [ ] `03_C_opt_nanoProgressiveDisclosure.ipynb`
+- [ ] `03_C_opt_nanoSubAgentContextIsolation.ipynb`
 
 ### 04_L
-- [ ] `04_L_nanoReActLoop_minimal.ipynb`
-- [ ] `04_L_nanoMultiAgent_minimal.ipynb`
-- [ ] `04_L_nanoTaskRunnerLifecycle_minimal.ipynb`
-- [ ] `04_L_opt_nanoCheckpointResume_minimal.ipynb`
-- [ ] `04_L_opt_nanoGraphWorkflow_minimal.ipynb`
-- [ ] `04_L_opt_nanoHumanHandoff_minimal.ipynb`
-- [ ] `04_L_opt_nanoPlannerGeneratorEvaluator_minimal.ipynb`
-- [ ] `04_L_opt_nanoStateModels_minimal.ipynb`
+- [x] ~~`04_L_nanoReActLoop.ipynb`~~
+- [x] ~~`04_L_nanoMultiAgent.ipynb`~~
+- [x] ~~`04_L_nanoTaskRunnerLifecycle.ipynb`~~
+- [ ] `04_L_opt_nanoCheckpointResume.ipynb`
+- [ ] `04_L_opt_nanoGraphWorkflow.ipynb`
+- [ ] `04_L_opt_nanoHumanHandoff.ipynb`
+- [ ] `04_L_opt_nanoPlannerGeneratorEvaluator.ipynb`
+- [ ] `04_L_opt_nanoStateModels.ipynb`
 
 ### 05_O
-- [ ] `05_O_nanoCostTelemetry_minimal.ipynb`
-- [ ] `05_O_nanoReliabilityOps_minimal.ipynb`
-- [ ] `05_O_nanoTraceOps_minimal.ipynb`
-- [ ] `05_O_opt_nanoCognitiveObservability_minimal.ipynb`
-- [ ] `05_O_opt_nanoOpenTelemetryMini_minimal.ipynb`
-- [ ] `05_O_opt_nanoOpsDashboard_minimal.ipynb`
+- [x] ~~`05_O_nanoCostTelemetry.ipynb`~~
+- [x] ~~`05_O_nanoReliabilityOps.ipynb`~~
+- [x] ~~`05_O_nanoTraceOps.ipynb`~~
+- [ ] `05_O_opt_nanoCognitiveObservability.ipynb`
+- [ ] `05_O_opt_nanoOpenTelemetryMini.ipynb`
+- [ ] `05_O_opt_nanoOpsDashboard.ipynb`
 
 ### 06_V
-- [ ] `06_V_nanoEvalHarness_minimal.ipynb`
-- [ ] `06_V_nanoFailureAttribution_minimal.ipynb`
-- [ ] `06_V_nanoRegressionSuite_minimal.ipynb`
-- [ ] `06_V_opt_nanoHarnessAblationEval_minimal.ipynb`
-- [ ] `06_V_opt_nanoInfraNoise_minimal.ipynb`
-- [ ] `06_V_opt_nanoLLMJudgeCalibration_minimal.ipynb`
-- [ ] `06_V_opt_nanoReadinessValidation_minimal.ipynb`
+- [x] ~~`06_V_nanoEvalHarness.ipynb`~~
+- [x] ~~`06_V_nanoFailureAttribution.ipynb`~~
+- [x] ~~`06_V_nanoRegressionSuite.ipynb`~~
+- [ ] `06_V_opt_nanoHarnessAblationEval.ipynb`
+- [ ] `06_V_opt_nanoInfraNoise.ipynb`
+- [ ] `06_V_opt_nanoLLMJudgeCalibration.ipynb`
+- [ ] `06_V_opt_nanoReadinessValidation.ipynb`
 
 ### 07_G
-- [ ] `07_G_nanoGovernance_minimal.ipynb`
-- [ ] `07_G_nanoPromptInjectionDefense_minimal.ipynb`
-- [ ] `07_G_nanoAuditConstitution_minimal.ipynb`
-- [ ] `07_G_opt_nanoComponentHardening_minimal.ipynb`
-- [ ] `07_G_opt_nanoCredentialVault_minimal.ipynb`
-- [ ] `07_G_opt_nanoFormalPolicyDSL_minimal.ipynb`
-- [ ] `07_G_opt_nanoIdentityDelegation_minimal.ipynb`
-- [ ] `07_G_opt_nanoInfoFlowControl_minimal.ipynb`
+- [x] ~~`07_G_nanoGovernance.ipynb`~~
+- [x] ~~`07_G_nanoPromptInjectionDefense.ipynb`~~
+- [x] ~~`07_G_nanoAuditConstitution.ipynb`~~
+- [ ] `07_G_opt_nanoComponentHardening.ipynb`
+- [ ] `07_G_opt_nanoCredentialVault.ipynb`
+- [ ] `07_G_opt_nanoFormalPolicyDSL.ipynb`
+- [ ] `07_G_opt_nanoIdentityDelegation.ipynb`
+- [ ] `07_G_opt_nanoInfoFlowControl.ipynb`
 
 ### 08_X
-- [ ] `08_X_nanoFullHarness_minimal.ipynb`
-- [ ] `08_X_nanoCostQualitySpeed_minimal.ipynb`
-- [ ] `08_X_nanoHarnessCoupling_minimal.ipynb`
-- [ ] `08_X_opt_nanoCapabilityControl_minimal.ipynb`
-- [ ] `08_X_opt_nanoHarnessAsAssumption_minimal.ipynb`
-- [ ] `08_X_opt_nanoLongRunStability_minimal.ipynb`
-- [ ] `08_X_opt_nanoMetaHarnessSearch_minimal.ipynb`
-- [ ] `08_X_opt_nanoSelfEvolution_minimal.ipynb`
+- [x] ~~`08_X_nanoFullHarness.ipynb`~~
+- [x] ~~`08_X_nanoCostQualitySpeed.ipynb`~~
+- [x] ~~`08_X_nanoHarnessCoupling.ipynb`~~
+- [ ] `08_X_opt_nanoCapabilityControl.ipynb`
+- [ ] `08_X_opt_nanoHarnessAsAssumption.ipynb`
+- [ ] `08_X_opt_nanoLongRunStability.ipynb`
+- [ ] `08_X_opt_nanoMetaHarnessSearch.ipynb`
+- [ ] `08_X_opt_nanoSelfEvolution.ipynb`
 
 ### 09_capstone
-- [ ] `09_capstone_nanoAgentPlatform_minimal.ipynb`
+- [ ] `09_capstone_nanoAgentPlatform.ipynb`
 
 ---
 
