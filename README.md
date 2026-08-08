@@ -1,4 +1,4 @@
-# nano-Harness
+# pure-harness
 
 > **从零实现包在大模型外面的 Agent Execution Harness（执行基础设施）**  
 > **Building LLM Agent Execution Harnesses from Scratch with Python & Jupyter Notebooks**
@@ -7,9 +7,9 @@
 
 ## 📌 简介 / Overview
  
-**nano-Harness** 是一个基于 Python 的微型 Agent 执行基础设施教学与实验库。就现阶段实践与生产而言，“**决定 Agent 可靠性的往往不是模型本身，而是包在它外面的 Harness**”。本项目参考综述论文 [*Agent Harness Engineering: A Survey*](https://picrew.github.io/LLM-Harness/) 提出的 **ETCLOVG 七层架构体系**（Execution, Tool, Context, Lifecycle, Observability, Verification, Governance）构建，采用 **Notebook-first** 理念，用最小可运行、真实 API 驱动、可观测的代码带你逐层拆解现代 Agent 执行机制。
+**pure-harness** 是一个基于 Python 的微型 Agent 执行基础设施教学与实验库。就现阶段实践与生产而言，“**决定 Agent 可靠性的往往不是模型本身，而是包在它外面的 Harness**”。本项目参考综述论文 [*Agent Harness Engineering: A Survey*](https://picrew.github.io/LLM-Harness/) 提出的 **ETCLOVG 七层架构体系**（Execution, Tool, Context, Lifecycle, Observability, Verification, Governance）构建，采用 **Notebook-first** 理念，用最小可运行、真实 API 驱动、可观测的代码带你逐层拆解现代 Agent 执行机制。
 
-**nano-Harness** is a minimal educational Python repository for building LLM Agent execution harnesses. Regarding current practice and production, "**Agent reliability is often governed by its execution harness rather than the model itself**". Built upon the **ETCLOVG 7-layer architecture** (Execution, Tool, Context, Lifecycle, Observability, Verification, Governance) proposed in [*Agent Harness Engineering: A Survey*](https://picrew.github.io/LLM-Harness/), it provides self-contained, real-API-driven, and highly observable code to unpack modern agent infrastructure step-by-step.
+**pure-harness** is a minimal educational Python repository for building LLM Agent execution harnesses. Regarding current practice and production, "**Agent reliability is often governed by its execution harness rather than the model itself**". Built upon the **ETCLOVG 7-layer architecture** (Execution, Tool, Context, Lifecycle, Observability, Verification, Governance) proposed in [*Agent Harness Engineering: A Survey*](https://picrew.github.io/LLM-Harness/), it provides self-contained, real-API-driven, and highly observable code to unpack modern agent infrastructure step-by-step.
 
 <img width="1233" height="609" alt="taxonomy" src="https://github.com/user-attachments/assets/bc281bb0-3a08-4e73-93d3-e6b086f9bc53" />
 
@@ -43,7 +43,7 @@ Image source: [*Agent Harness Engineering: A Survey*](https://picrew.github.io/L
 *Core educational notebooks are organized into module-based subdirectories at the repository root, following the ETCLOVG 7-layer architecture:*
 
 ```text
-nano-Harness/
+pure-harness/
 ├── 00_core/                                                # [Core] 核心基础模块
 │   ├── 00_core_nanoProviderAdapter.ipynb                   # [Core] 统一 LLM Provider 接口与配置校验
 │   ├── 00_core_nanoMessageProtocol.ipynb                   # [Core] 结构化消息协议与状态 Diff
@@ -86,7 +86,7 @@ nano-Harness/
 └── README.md                                               # 项目说明文档
 ```
 ```text
-nano-Harness/
+pure-harness/
 ├── 00_core/                                                # [Core] Core Foundation Modules
 │   ├── 00_core_nanoProviderAdapter.ipynb                   # [Core] Unified LLM Provider Interface & Config Validation
 │   ├── 00_core_nanoMessageProtocol.ipynb                   # [Core] Structured Message Protocol & State Diff
@@ -136,10 +136,10 @@ nano-Harness/
 克隆仓库并创建 Conda 环境：  
 Clone the repository and set up a Conda environment:
 ```bash
-git clone https://github.com/your-username/nano-Harness.git
-cd nano-Harness
-conda create -n nano-harness python=3.11 -y
-conda activate nano-harness
+git clone https://github.com/kaixinjiuxing666/pure-harness.git
+cd pure-harness
+conda create -n pure-harness python=3.11 -y
+conda activate pure-harness
 pip install -r requirements.txt
 ```
 
